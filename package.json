@@ -1,0 +1,39 @@
+{
+  "name": "bhookzy",
+  "version": "2.0.0",
+  "description": "Bhookzy.com — pure-veg food ordering platform (customer site, WhatsApp ordering, admin dashboard, multi-restaurant menu management)",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "migrate": "node server/scripts/migrate.js",
+    "seed": "node server/scripts/seed.js",
+    "create-admin": "node server/scripts/create-admin.js",
+    "build:css": "tailwindcss -c tailwind.config.js -i src/input.css -o public/assets/app.css --minify && tailwindcss -c tailwind.admin.config.js -i src/input.css -o public/assets/admin.css --minify",
+    "test": "node --test --test-concurrency=1 \"tests/*.test.js\""
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.12.0",
+    "sharp": "^0.35.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "chart.js": "^4.4.3",
+    "tailwindcss": "^3.4.10"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
+  }
+}
